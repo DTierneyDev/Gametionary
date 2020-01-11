@@ -1,11 +1,76 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="container page-container">
+	
+    <!-- INTRODUCTION -->
+    <div class="container mt-3 mb-5">
+		<div class="row text-center mb-2">
+			<div class="col-12">
+                <h1>Gametionary</h1>
+			</div>
+		</div>
+        <div class="row text-center">
+			<div class="col-12">
+				<p>
+					Your source of gamer language.</br>
+					Search, add to and edit the library to help people better understand the race know as "Gamers".
+				</p>
+			</div>
+		</div>
+        <div class="row text-center">
+			<div class="col-12">
+				<p>
+					<strong>Get started below:</strong>
+				</p>
+			</div>
+		</div>
+        <div class="row text-center">
+			<div class="col-3">
+				<button type="button" class="btn btn-introduction btn-light"><i class="fas fa-book"></i> A-Z List</button>
+			</div>
+            <div class="col-3">
+				<button type="button" class="btn btn-introduction btn-light"><i class="fas fa-star"></i> Top Rated</button>
+			</div>
+            <div class="col-3">
+				<button type="button" class="btn btn-introduction btn-light"><i class="fas fa-random"></i> Random</button>
+			</div>
+            <div class="col-3">
+				<button type="button" class="btn btn-introduction btn-light"><i class="fas fa-plus-circle"></i> Add</button>
+			</div>
+		</div>
+	</div>
+    <!-- /INTRODUCTION -->
+
+
+
+	<!-- ENTRY-CARDS -->
 	{% for entry in entries %}
-	{{entry.name}}
-	{{entry.description}}
-	{{entry.category}}
-	{{entry.upvotes}}
+	<div class="container-fluid entry-container">
+		<div class="row justify-content-center">
+			<div class="col-10">
+				<h4 class="entry-header">{{entry.name}}</h4>
+			</div>
+			<div class="col-2 text-right">
+				<button type="button" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-12">
+				<p class="entry-description">{{entry.description}}</p>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<button type="button" class="btn btn-outline-success entry-upvote-button"><i class="far fa-thumbs-up"></i></button><span class="entry-upvotes">  {{entry.upvotes}}</span>
+			</div>
+			<div class="col-6 text-right">
+				<button type="button" class="btn btn-primary entry-edit-button"><i class="fas fa-pencil-alt"></i> Edit</button>
+			</div>
+		</div>
+	</div>
 	{% endfor %}
+	<!-- /ENTRY-CARDS -->
+</div>
 
 {% endblock %}

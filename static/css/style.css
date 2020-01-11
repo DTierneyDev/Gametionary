@@ -1,0 +1,23 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ---- CONTAINERS ---- */
+
+.page-container {
+        width: 100vw;
+    }
+
+.entry-container {
+    margin: 1em 0;
+    padding: 1em;
+    border-style: solid;
+}
+
+/* ---- MEDIA QUERIES ---- */
+
+@media (min-width: 768px) {
+    .page-container {
+        width: 60vw;
+    }
+}
