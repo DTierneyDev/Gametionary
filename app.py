@@ -15,9 +15,21 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/get_tasks')
-def get_tasks():
+@app.route('/index')
+def index():
     return render_template("index.html", entries=mongo.db.entries.find())
+
+
+@app.route('/add_entry')
+def add_entry():
+    return render_template("addentry.html")
+
+
+@app.route('/insert_entry', methods=['POST'])
+def insert_entry():
+    entries = mongo.db.entries
+    entries.insert_one(request.form.to_dict())
+    return redirect(url_for('add_entry'))
 
 
 if __name__ == '__main__':

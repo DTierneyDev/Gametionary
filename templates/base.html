@@ -15,7 +15,7 @@
 <body>
     <!-- NAVBAR -->
 	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Gametionary</a>
+		<a class="navbar-brand" href="{{url_for('index')}}">Gametionary</a>
 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search" placeholder="Search">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -26,7 +26,7 @@
 		<div class="collapse navbar-collapse" id="navbarToggler">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Home</a>
+					<a class="nav-link" href="{{url_for('index')}}">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">A-Z List</a>
@@ -38,7 +38,7 @@
 					<a class="nav-link" href="#">Random</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Add Entry</a>
+					<a class="nav-link" href="{{url_for('add_entry')}}">Add Entry</a>
 				</li>
 			</ul>
 		</div>
