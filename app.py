@@ -32,6 +32,30 @@ def insert_entry():
     return redirect(url_for('add_entry'))
 
 
+@app.route('/edit_entry/<entry_id>')
+def edit_entry(entry_id):
+    the_entry = mongo.db.entries.find_one({"_id": ObjectId(entry_id)})
+    return render_template('editentry.html', entry=the_entry)
+
+
+@app.route('/update_entry/<entry_id>', methods=['POST'])
+def update_entry(entry_id):
+    entries = mongo.db.entries
+    entries.update({'_id': ObjectId(entry_id)},
+            {
+                'name': request.form.get('name'),
+                'description': request.form.get('description'),
+                'upvotes': request.form.get('upvotes')
+            })
+    return redirect(url_for('index'))
+
+
+@app.route('/delete_entry/<entry_id>')
+def delete_entry(entry_id):
+    mongo.db.entries.remove({'_id': ObjectId(entry_id)})
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
