@@ -19,6 +19,34 @@
 		</div>
 	</div>
     <!-- /INTRODUCTION -->
+
+    <!-- ENTRY-CARDS -->
+	{% for entry in entries %}
+	<div class="container-fluid entry-container">
+		<div class="row justify-content-center">
+			<div class="col-10">
+				<h4 class="entry-header">{{entry.name}}</h4>
+			</div>
+			<div class="col-2 text-right">
+				<a class="btn btn-outline-danger" href="{{url_for('delete_entry', entry_id=entry._id)}}"><i class="far fa-trash-alt"></i></a>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-12">
+				<p class="entry-description">{{entry.description}}</p>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<button type="button" class="btn btn-outline-success entry-upvote-button"><i class="far fa-thumbs-up"></i></button><span class="entry-upvotes">  {{entry.upvotes}}</span>
+			</div>
+			<div class="col-6 text-right">
+				<a class="btn btn-primary entry-edit-button" href="{{url_for('edit_entry', entry_id=entry._id)}}"><i class="fas fa-pencil-alt"></i> Edit</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+	<!-- /ENTRY-CARDS -->
 </div>
 
 {% endblock %}

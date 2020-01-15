@@ -7,44 +7,20 @@
     <div class="container mt-3 mb-5">
 		<div class="row text-center mb-2">
 			<div class="col-12">
-                <h1>Gametionary</h1>
+                <h1>A-Z List</h1>
 			</div>
 		</div>
         <div class="row text-center">
 			<div class="col-12">
 				<p>
-					Your source of gamer language.</br>
-					Search, add to and edit the library to help people better understand the race know as "Gamers".
+					Here you will find a full list of entries that have been helpfully uploaded.
 				</p>
-			</div>
-		</div>
-        <div class="row text-center">
-			<div class="col-12">
-				<p>
-					<strong>Get started below:</strong>
-				</p>
-			</div>
-		</div>
-        <div class="row text-center">
-			<div class="col-3">
-				<a class="btn btn-introduction btn-light" href="{{url_for('az')}}"><i class="fas fa-book"></i> A-Z List</a>
-			</div>
-            <div class="col-3">
-				<a class="btn btn-introduction btn-light" href="{{url_for('top_rated')}}"><i class="fas fa-star"></i> Top Rated</a>
-			</div>
-            <div class="col-3">
-				<a class="btn btn-introduction btn-light" href="{{url_for('random')}}"><i class="fas fa-random"></i> Random</a>
-			</div>
-            <div class="col-3">
-				<a class="btn btn-introduction btn-light" href="{{url_for('add_entry')}}"><i class="fas fa-plus-circle"></i> Add</a>
 			</div>
 		</div>
 	</div>
     <!-- /INTRODUCTION -->
 
-
-
-	<!-- ENTRY-CARDS -->
+    <!-- ENTRY-CARDS -->
 	{% for entry in entries %}
 	<div class="container-fluid entry-container">
 		<div class="row justify-content-center">

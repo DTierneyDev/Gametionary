@@ -20,6 +20,26 @@ def index():
     return render_template("index.html", entries=mongo.db.entries.find())
 
 
+@app.route('/az')
+def az():
+    return render_template("az.html", entries=mongo.db.entries.find())
+
+
+@app.route('/random')
+def random():
+    return render_template("random.html", entries=mongo.db.entries.find())
+
+
+@app.route('/top_rated')
+def top_rated():
+    return render_template("toprated.html", entries=mongo.db.entries.find())
+
+
+@app.route('/search')
+def search():
+    return render_template("search.html", entries=mongo.db.entries.find())
+
+
 @app.route('/add_entry')
 def add_entry():
     return render_template("addentry.html")
