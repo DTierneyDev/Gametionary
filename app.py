@@ -32,7 +32,7 @@ def random():
 
 @app.route('/top_rated')
 def top_rated():
-    return render_template("toprated.html", entries=mongo.db.entries.find())
+    return render_template("toprated.html", entries=mongo.db.entries.find().sort({"upvotes": -1}))
 
 
 @app.route('/search')
