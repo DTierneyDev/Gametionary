@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from random import randint
 from os import path
 if path.exists("env.py"):
   import env
@@ -22,17 +23,17 @@ def index():
 
 @app.route('/az')
 def az():
-    return render_template("az.html", entries=mongo.db.entries.find())
+    return render_template("az.html", entries=mongo.db.entries.find().sort('name'))
 
 
 @app.route('/random')
 def random():
-    return render_template("random.html", entries=mongo.db.entries.find())
+    return render_template("random.html", random_entry=mongo.db.entries.aggregate([{'$sample': {'size': 1}}]))
 
 
 @app.route('/top_rated')
 def top_rated():
-    return render_template("toprated.html", entries=mongo.db.entries.find().sort({"upvotes": -1}))
+    return render_template("toprated.html", entries=mongo.db.entries.find().sort('upvotes', -1).collation({'locale': 'en', 'numericOrdering': True}).limit(20))
 
 
 @app.route('/search')
