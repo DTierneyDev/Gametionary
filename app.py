@@ -2,7 +2,6 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from random import randint
 from os import path
 if path.exists("env.py"):
   import env
@@ -75,6 +74,33 @@ def update_entry(entry_id):
 def delete_entry(entry_id):
     mongo.db.entries.remove({'_id': ObjectId(entry_id)})
     return redirect(url_for('index'))
+
+
+@app.route('/add_upvote/<entry_id>')
+def add_upvote(entry_id):
+    entries = mongo.db.entries
+    entries.update({'_id': ObjectId(entry_id)}, {'$inc': {'upvotes': 1}})
+    return redirect(url_for('index'))
+
+
+@app.route('/validator')
+def validator():
+    return mongo.db.runCommand({'collMod': 'entries',
+                                'validator': {'$jsonSchema': {
+                                    'bsonType': 'object',
+                                    'properties': {
+                                        'name': {
+                                            'bsonType': 'string'
+                                        },
+                                        'description': {
+                                            'bsonType': 'string'
+                                        },
+                                        'upvotes': {
+                                            'bsonType': 'int32'
+                                        }
+                                    }
+                                }}, 'validationLevel': 'strict'
+                                })
 
 
 if __name__ == '__main__':
