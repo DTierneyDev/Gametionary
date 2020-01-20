@@ -2,12 +2,12 @@
 
 This project is an online dictionary for Game related words, abbreviations and phrases.
 
-Using this website, you will be able to read the entries that have been entered into the database.
+Using this desktopsite, you will be able to read the entries that have been entered into the database.
 Add you own entries into the database. Edit entries that are in the database, and delete entries from the database.
 
 You can also upvote entries that you find helpful or accurate.
 
-The goals of this website are to:
+The goals of this desktopsite are to:
 - Allow users to easily share information on game related jargon.
 - Allow users to easily find information on game related jargon.
 - Allow users to upvote information that they find helpful.
@@ -18,7 +18,7 @@ A demo can be viewed on Heroku [here](hhttps://gametionary.herokuapp.com/).
 
 ## UX
 
-My goal with the design of this website was to make it simple to navigate and use.
+My goal with the design of this desktopsite was to make it simple to navigate and use.
 I've done this using an introduction on the main page, and making the layout easy to understand. Such as the buttons (edit, delete, upvote) on entries being highlighted and easy to find.
 
 #### User Stories
@@ -35,26 +35,26 @@ I've done this using an introduction on the main page, and making the layout eas
 
 Here are the wireframe mockups that I made before starting the project.
 
-- [Index - Web](wireframes/index-web.png).
-- [Index - Web - Menu Open](wireframes/index-web-menuopen.png).
+- [Index - Desktop](wireframes/index-desktop.png).
+- [Index - Desktop - Menu Open](wireframes/index-desktop-menuopen.png).
 - [Index - Tablet](wireframes/index-tablet.png).
 - [Index - Mobile](wireframes/index-mobile.png).
-- [Search - Web](wireframes/search-web.png).
+- [Search - Desktop](wireframes/search-desktop.png).
 - [Search - Tablet](wireframes/search-tablet.png).
 - [Search - Mobile](wireframes/search-mobile.png).
-- [A-Z - Web](wireframes/a-z-web.png).
+- [A-Z - Desktop](wireframes/a-z-desktop.png).
 - [A-Z - Tablet](wireframes/a-z-tablet.png).
 - [A-Z - Mobile](wireframes/a-z-mobile.png).
-- [Top Rated - Web](wireframes/top-rated-web.png).
+- [Top Rated - Desktop](wireframes/top-rated-desktop.png).
 - [Top Rated - Tablet](wireframes/top-rated-tablet.png).
 - [Top Rated - Mobile](wireframes/top-rated-mobile.png).
-- [Random - Web](wireframes/random-web.png).
+- [Random - Desktop](wireframes/random-desktop.png).
 - [Random - Tablet](wireframes/random-tablet.png).
 - [Random - Mobile](wireframes/random-mobile.png).
-- [Add Entry - Web](wireframes/add-entry-web.png).
+- [Add Entry - Desktop](wireframes/add-entry-desktop.png).
 - [Add Entry - Tablet](wireframes/add-entry-tablet.png).
 - [Add Entry - Mobile](wireframes/add-entry-mobile.png).
-- [Edit Entry - Web](wireframes/edit-entry-web.png).
+- [Edit Entry - Desktop](wireframes/edit-entry-desktop.png).
 - [Edit Entry - Tablet](wireframes/edit-entry-tablet.png).
 - [Edit Entry - Mobile](wireframes/edit-entry-mobile.png).
 
