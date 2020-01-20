@@ -23,7 +23,7 @@ def index():
 @app.route('/az')
 def az():
     return render_template("az.html", entries=mongo.db.entries.find().sort('name'))
- 
+
 
 @app.route('/random')
 def random():
@@ -78,31 +78,11 @@ def delete_entry(entry_id):
     return redirect(url_for('index'))
 
 
-@app.route('/add_upvote/<entry_id>')
-def add_upvote(entry_id):
+@app.route('/add_upvote/<page>/<entry_id>/')
+def add_upvote(page, entry_id):
     entries = mongo.db.entries
     entries.update({'_id': ObjectId(entry_id)}, {'$inc': {'upvotes': 1}})
-    return redirect(url_for('index'))
-
-
-# @app.route('/validator')
-# def validator():
-#     return mongo.db.runCommand({'collMod': 'entries',
-#                                 'validator': {'$jsonSchema': {
-#                                     'bsonType': 'object',
-#                                     'properties': {
-#                                         'name': {
-#                                             'bsonType': 'string'
-#                                         },
-#                                         'description': {
-#                                             'bsonType': 'string'
-#                                         },
-#                                         'upvotes': {
-#                                             'bsonType': 'int32'
-#                                         }
-#                                     }
-#                                 }}, 'validationLevel': 'strict'
-#                                 })
+    return redirect(url_for(page))
 
 
 if __name__ == '__main__':
