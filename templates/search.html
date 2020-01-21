@@ -1,24 +1,23 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container page-container">
-	
+
     <!-- INTRODUCTION -->
     <div class="container mt-3 mb-3">
-		<div class="row text-center mb-2">
-			<div class="col-12">
+        <div class="row text-center mb-2">
+            <div class="col-12">
                 <h1>Search</h1>
-			</div>
-		</div>
+            </div>
+        </div>
         <div class="row text-center">
-			<div class="col-12">
-				<p>
-					Heard something and wanted to know what it meant?<br>
-                    You've come to the right place.
-				</p>
-			</div>
-		</div>
-	</div>
+            <div class="col-12">
+                <p>
+                    Heard something and wanted to know what it meant?
+                    <br> You've come to the right place.
+                </p>
+            </div>
+        </div>
+    </div>
     <!-- /INTRODUCTION -->
 
     <!-- SEARCHBAR -->
@@ -26,13 +25,13 @@
         <div class="row">
             <div class="col-12">
                 <form action="{{url_for('search_db')}}" method="POST">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="search_term" name="search_term" value="{{search_term}}" required>
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </form>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="search_term" name="search_term" value="{{search_term}}" required>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -41,42 +40,42 @@
     <!-- RESULTS-COUNT -->
     <div class="container" {{results_hidden}}>
         <div class="row text-center">
-			<div class="col-12">
-				<p>
-					{{results_found}} results found!
-				</p>
-			</div>
-		</div>
-	</div>
+            <div class="col-12">
+                <p>
+                    {{results_found}} results found!
+                </p>
+            </div>
+        </div>
+    </div>
     <!-- /RESULTS-COUNT -->
 
     <!-- ENTRY-CARDS -->
     {% for entry in entries %}
-	<div class="container-fluid entry-container">
-		<div class="row justify-content-center">
-			<div class="col-9">
-				<h4 class="entry-header">{{entry.name}}</h4>
-			</div>
-			<div class="col-3 text-right">
-				<a class="btn btn-outline-danger" href="{{url_for('delete_entry', entry_id=entry._id)}}"><i class="far fa-trash-alt"></i></a>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-12">
-				<p class="entry-description">{{entry.description}}</p>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-6">
-				<a class="btn btn-outline-success entry-upvote-button" href="{{url_for('add_upvote', page='search', entry_id=entry._id)}}"><i class="far fa-thumbs-up"></i><span class="entry-upvotes">  {{entry.upvotes}}</span></a>
-			</div>
-			<div class="col-6 text-right">
-				<a class="btn btn-outline-primary entry-edit-button" href="{{url_for('edit_entry', entry_id=entry._id)}}"><i class="fas fa-pencil-alt"></i> Edit</a>
-			</div>
-		</div>
-	</div>
+    <div class="container-fluid entry-container">
+        <div class="row justify-content-center">
+            <div class="col-9">
+                <h4 class="entry-header">{{entry.name}}</h4>
+            </div>
+            <div class="col-3 text-right">
+                <a class="btn btn-outline-danger" href="{{url_for('delete_entry', entry_id=entry._id)}}"><i class="far fa-trash-alt"></i></a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <p class="entry-description">{{entry.description}}</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <a class="btn btn-outline-success entry-upvote-button" href="{{url_for('add_upvote', page='search', entry_id=entry._id)}}"><i class="far fa-thumbs-up"></i><span class="entry-upvotes">  {{entry.upvotes}}</span></a>
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn btn-outline-primary entry-edit-button" href="{{url_for('edit_entry', entry_id=entry._id)}}"><i class="fas fa-pencil-alt"></i> Edit</a>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-	<!-- /ENTRY-CARDS -->
+    <!-- /ENTRY-CARDS -->
 
 </div>
 

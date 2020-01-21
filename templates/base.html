@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-	<title>Gametionary</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Gametionary</title>
 </head>
 
 <body>
@@ -40,31 +40,30 @@
         </ul>
     </div>
     <!-- /SIDEBAR -->
-    
+
     <div id="main" class="container-fluid px-0">
-    <!-- NAVBAR -->
-	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="{{url_for('index')}}">Gametionary</a>
-		<form class="d-none d-md-block" action="{{url_for('search_db')}}" method="POST">
-            <div class="input-group">
-                <input type="text" class="form-control navbar-search" id="search_term" name="search_term" required>
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{url_for('index')}}">Gametionary</a>
+            <form class="d-none d-md-block" action="{{url_for('search_db')}}" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control navbar-search" id="search_term" name="search_term" required>
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
+                    </div>
                 </div>
-            </div>
-        </form>
-		<button class="navbar-toggler" type="button" onclick="openNav()">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-	</nav>
-    <!-- /NAVBAR -->
-    
-	{% block content %}
-	{% endblock %}
-    
+            </form>
+            <button class="navbar-toggler" type="button" onclick="openNav()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <!-- /NAVBAR -->
+
+        {% block content %} {% endblock %}
+
     </div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="{{url_for('static', filename='javascript/main.js')}}"></script>
 </body>
 

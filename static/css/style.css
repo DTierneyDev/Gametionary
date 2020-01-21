@@ -4,7 +4,6 @@ body {
 }
 
 /* ---- CONTAINERS ---- */
-
 .page-container {
         width: 100vw;
     }
@@ -22,13 +21,11 @@ body {
 }
 
 /* ---- NAVBAR ---- */
-
 .bg-dark {
     background-color: #939393 !important;
 }
 
 /* ---- SIDEBAR ---- */
-/* The sidebar menu */
 .sidebar {
     height: 100%;
     width: 0;
@@ -44,7 +41,6 @@ body {
     border-left-width: 1px;
 }
 
-/* The sidebar links */
 .sidebar a {
   padding: 0.3em 0.5em !important;
   text-decoration: none;
@@ -54,12 +50,10 @@ body {
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
   color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
   top: 0.5em;
@@ -79,7 +73,6 @@ body {
 }
 
 /* ---- SIDEBAR ---- */
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
