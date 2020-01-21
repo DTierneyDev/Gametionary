@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!-- INTRODUCTION -->
+<div class="container mt-3 mb-3">
+    <div class="row text-center mb-2">
+        <div class="col-12">
+            <h1>Edit Entry</h1>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-12">
+            <p>
+                Fill in the form below to edit this entry on the database.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- /INTRODUCTION -->
 
 <div class="container my-3">
-	<div class="row">
-		<div class="col-12">
-			<h3>Edit Entry</h3>
-		</div>
-	</div>
 	<div class="row">
 		<div class="col-12">
             <!-- EDITFORM -->
@@ -23,7 +34,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="upvotes" name="upvotes" value="{{entry.upvotes}}" hidden>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
 			</form>
             <!-- /EDITFORM -->
 		</div>

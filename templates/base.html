@@ -15,7 +15,7 @@
 <body>
     <!-- SIDEBAR -->
     <div id="sidebar" class="sidebar navbar-light bg-light">
-        <button class="navbar-toggler closebtn" type="button" onclick="closeNav()" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler closebtn" type="button" onclick="closeNav()">
             <span class="navbar-toggler-icon"></span>
         </button>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -43,41 +43,19 @@
     
     <div id="main" class="container-fluid px-0">
     <!-- NAVBAR -->
-	<nav class="navbar navbar-light bg-light">
+	<nav class="navbar navbar-dark bg-dark">
 		<a class="navbar-brand" href="{{url_for('index')}}">Gametionary</a>
 		<form class="d-none d-md-block" action="{{url_for('search_db')}}" method="POST">
             <div class="input-group">
                 <input type="text" class="form-control navbar-search" id="search_term" name="search_term" required>
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </form>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarToggler" onclick="openNav()" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" onclick="openNav()">
             <span class="navbar-toggler-icon"></span>
         </button>
-		<!-- <div class="collapse navbar-collapse" id="navbarToggler">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item active">
-					<a class="nav-link" href="{{url_for('index')}}">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{url_for('az')}}">A-Z List</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{url_for('top_rated')}}">Top Rated</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{url_for('random')}}">Random</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{url_for('add_entry')}}">Add Entry</a>
-				</li>
-                <li class="nav-item">
-					<a class="nav-link" href="{{url_for('search')}}">Search</a>
-				</li>
-			</ul>
-		</div> -->
 	</nav>
     <!-- /NAVBAR -->
     

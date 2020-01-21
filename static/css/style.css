@@ -1,5 +1,6 @@
 body {
     font-family: 'Nunito', sans-serif;
+    background: #f1f1f1;
 }
 
 /* ---- CONTAINERS ---- */
@@ -12,11 +13,18 @@ body {
     margin: 1em 0;
     padding: 1em;
     border-style: solid;
+    border-radius: .25rem;
 }
 
 /* ---- FORM-CONTROLS ---- */
 .navbar-search {
     min-width: 30em !important;
+}
+
+/* ---- NAVBAR ---- */
+
+.bg-dark {
+    background-color: #939393 !important;
 }
 
 /* ---- SIDEBAR ---- */

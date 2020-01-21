@@ -103,8 +103,7 @@ Once you'ce completed the form the submit button will add or edit the entry.
 
 1. HTML
 2. CSS
-3. Bootstrap (4.3)
-4. JQuery
+3. Bootstrap (4.4)
 5. Javascript
 6. MongoDB
 7. Flask
