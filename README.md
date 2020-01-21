@@ -14,7 +14,7 @@ The goals of this site are to:
 
 ## Demo
 
-A demo can be viewed on Heroku [here](hhttps://gametionary.herokuapp.com/).
+A demo can be viewed on Heroku [here](https://gametionary.herokuapp.com/).
 
 ## UX
 
@@ -155,7 +155,7 @@ A demo can be viewed on Heroku [here](https://gametionary.herokuapp.com/).
 
 ## Credits
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text for most of the database entries was copied from [This Wikipedia Article](https://en.wikipedia.org/wiki/Glossary_of_video_game_terms)
 - I used the following tutorial to give me a base toggleable sidebar to work with: [Sidebar Tutorial](https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp)
 
 ### Acknowledgements
