@@ -24,10 +24,10 @@
     {% for entry in random_entry %}
 	<div class="container-fluid entry-container">
 		<div class="row justify-content-center">
-			<div class="col-10">
+			<div class="col-9">
 				<h4 class="entry-header">{{entry.name}}</h4>
 			</div>
-			<div class="col-2 text-right">
+			<div class="col-3 text-right">
 				<a class="btn btn-outline-danger" href="{{url_for('delete_entry', entry_id=entry._id)}}"><i class="far fa-trash-alt"></i></a>
 			</div>
 		</div>

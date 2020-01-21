@@ -14,28 +14,28 @@
 
 <body>
     <!-- SIDEBAR -->
-    <div id="sidebar" class="sidebar">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarToggler" onclick="closeNav()" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <div id="sidebar" class="sidebar navbar-light bg-light">
+        <button class="navbar-toggler closebtn" type="button" onclick="closeNav()" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{url_for('index')}}">Home</a>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('index')}}"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('az')}}">A-Z List</a>
+                <a class="nav-link" href="{{url_for('az')}}"><i class="fas fa-book"></i> A-Z List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('top_rated')}}">Top Rated</a>
+                <a class="nav-link" href="{{url_for('top_rated')}}"><i class="fas fa-star"></i> Top Rated</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('random')}}">Random</a>
+                <a class="nav-link" href="{{url_for('random')}}"><i class="fas fa-random"></i> Random</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('add_entry')}}">Add Entry</a>
+                <a class="nav-link" href="{{url_for('add_entry')}}"><i class="fas fa-plus-circle"></i> Add Entry</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('search')}}">Search</a>
+                <a class="nav-link" href="{{url_for('search')}}"><i class="fas fa-search"></i> Search</a>
             </li>
         </ul>
     </div>
@@ -46,8 +46,8 @@
 	<nav class="navbar navbar-light bg-light">
 		<a class="navbar-brand" href="{{url_for('index')}}">Gametionary</a>
 		<form class="d-none d-md-block" action="{{url_for('search_db')}}" method="POST">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="search_term" name="search_term" required>
+            <div class="input-group">
+                <input type="text" class="form-control navbar-search" id="search_term" name="search_term" required>
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
                 </div>

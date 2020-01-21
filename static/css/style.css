@@ -14,24 +14,31 @@ body {
     border-style: solid;
 }
 
+/* ---- FORM-CONTROLS ---- */
+.navbar-search {
+    min-width: 30em !important;
+}
+
 /* ---- SIDEBAR ---- */
 /* The sidebar menu */
 .sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  right: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Stay on top */
+    top: 0;
+    right: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 1em;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    border-left-color: rgb(206, 212, 218);
+    border-left-style: solid;
+    border-left-width: 1px;
 }
 
 /* The sidebar links */
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 0.3em 0.5em !important;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -47,9 +54,8 @@ body {
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
-  top: 0;
+  top: 0.5em;
   right: 25px;
-  font-size: 36px;
   margin-left: 50px;
 }
 /* ---- /SIDEBAR ---- */
@@ -61,6 +67,7 @@ body {
     .page-container {
         width: 60vw;
     }
+    
 }
 
 /* ---- SIDEBAR ---- */

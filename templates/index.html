@@ -26,33 +26,30 @@
 			</div>
 		</div>
         <div class="row text-center">
-			<div class="col-3">
+			<div class="col-3 px-1">
 				<a class="btn btn-introduction btn-light" href="{{url_for('az')}}"><i class="fas fa-book"></i> A-Z List</a>
 			</div>
-            <div class="col-3">
+            <div class="col-3 px-1">
 				<a class="btn btn-introduction btn-light" href="{{url_for('top_rated')}}"><i class="fas fa-star"></i> Top Rated</a>
 			</div>
-            <div class="col-3">
+            <div class="col-3 px-1">
 				<a class="btn btn-introduction btn-light" href="{{url_for('random')}}"><i class="fas fa-random"></i> Random</a>
 			</div>
-            <div class="col-3">
+            <div class="col-3 px-1">
 				<a class="btn btn-introduction btn-light" href="{{url_for('add_entry')}}"><i class="fas fa-plus-circle"></i> Add</a>
 			</div>
 		</div>
 	</div>
-
     <!-- /INTRODUCTION -->
-
-
 
 	<!-- ENTRY-CARDS -->
 	{% for entry in entries %}
 	<div class="container-fluid entry-container">
 		<div class="row justify-content-center">
-			<div class="col-10">
+			<div class="col-9">
 				<h4 class="entry-header">{{entry.name}}</h4>
 			</div>
-			<div class="col-2 text-right">
+			<div class="col-3 text-right">
 				<a class="btn btn-outline-danger" href="{{url_for('delete_entry', entry_id=entry._id)}}"><i class="far fa-trash-alt"></i></a>
 			</div>
 		</div>
