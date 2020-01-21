@@ -13,12 +13,28 @@
         <div class="row text-center">
 			<div class="col-12">
 				<p>
-					Here you will find a full list of entries that have been helpfully uploaded.
+					Heard something and wanted to know what it meant?</br>
+                    You've come to the right place.
 				</p>
 			</div>
 		</div>
 	</div>
     <!-- /INTRODUCTION -->
+
+    <!-- SEARCHBAR -->
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-12">
+                <form action="{{url_for('search_db')}}" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="search_term" name="search_term" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /SEARCHBAR -->
 
     <!-- ENTRY-CARDS -->
 	{% for entry in entries %}

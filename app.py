@@ -40,6 +40,12 @@ def search():
     return render_template("search.html", entries=mongo.db.entries.find())
 
 
+@app.route('/search_db', methods=['POST'])
+def search_db():
+    search = request.form.get('search_term')
+    return render_template("search.html", entries=mongo.db.entries.find({'name': {'$regex': search, '$options': 'i'}}))
+
+
 @app.route('/add_entry')
 def add_entry():
     return render_template("addentry.html")

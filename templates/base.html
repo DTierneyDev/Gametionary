@@ -16,10 +16,12 @@
     <!-- NAVBAR -->
 	<nav class="navbar navbar-light bg-light">
 		<a class="navbar-brand" href="{{url_for('index')}}">Gametionary</a>
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
+		<form action="{{url_for('search_db')}}" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" id="search_term" name="search_term" placeholder="">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,6 +41,9 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{url_for('add_entry')}}">Add Entry</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link" href="{{url_for('search')}}">Search</a>
 				</li>
 			</ul>
 		</div>
