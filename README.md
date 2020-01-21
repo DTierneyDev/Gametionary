@@ -151,6 +151,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- I used the following tutorial to give me a base toggleable sidebar to work with: [Sidebar Tutorial](https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp)
 
 ### Media
 - The photos used in this site were obtained from ...

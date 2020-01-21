@@ -37,13 +37,13 @@ def top_rated():
 
 @app.route('/search')
 def search():
-    return render_template("search.html", entries=mongo.db.entries.find())
+    return render_template("search.html", entries=mongo.db.entries.find(), results_hidden="hidden")
 
 
 @app.route('/search_db', methods=['POST'])
 def search_db():
     search = request.form.get('search_term')
-    return render_template("search.html", entries=mongo.db.entries.find({'name': {'$regex': search, '$options': 'i'}}))
+    return render_template("search.html", entries=mongo.db.entries.find({'name': {'$regex': search, '$options': 'i'}}), search_term=search, results_found=mongo.db.entries.find({'name': {'$regex': search, '$options': 'i'}}).count(), results_hidden="")
 
 
 @app.route('/add_entry')

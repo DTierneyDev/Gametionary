@@ -26,18 +26,30 @@
         <div class="row">
             <div class="col-12">
                 <form action="{{url_for('search_db')}}" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="search_term" name="search_term" placeholder="">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </form>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="search_term" name="search_term" value="{{search_term}}" required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
             </div>
         </div>
     </div>
     <!-- /SEARCHBAR -->
 
+    <div class="container" {{results_hidden}}>
+        <div class="row text-center">
+			<div class="col-12">
+				<p>
+					{{results_found}} results found!
+				</p>
+			</div>
+		</div>
+	</div>
+
     <!-- ENTRY-CARDS -->
-	{% for entry in entries %}
+    {% for entry in entries %}
 	<div class="container-fluid entry-container">
 		<div class="row justify-content-center">
 			<div class="col-10">
@@ -61,7 +73,7 @@
 			</div>
 		</div>
 	</div>
-	{% endfor %}
+    {% endfor %}
 	<!-- /ENTRY-CARDS -->
 
 </div>

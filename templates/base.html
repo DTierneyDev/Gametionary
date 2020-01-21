@@ -13,19 +13,50 @@
 </head>
 
 <body>
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="sidebar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarToggler" onclick="closeNav()" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('index')}}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('az')}}">A-Z List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('top_rated')}}">Top Rated</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('random')}}">Random</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('add_entry')}}">Add Entry</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('search')}}">Search</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /SIDEBAR -->
+    
+    <div id="main" class="container-fluid px-0">
     <!-- NAVBAR -->
 	<nav class="navbar navbar-light bg-light">
 		<a class="navbar-brand" href="{{url_for('index')}}">Gametionary</a>
-		<form action="{{url_for('search_db')}}" method="POST">
-            <div class="form-group">
-                <input type="text" class="form-control" id="search_term" name="search_term" placeholder="">
+		<form class="d-none d-md-block" action="{{url_for('search_db')}}" method="POST">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="search_term" name="search_term" required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Search</button>
         </form>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarToggler" onclick="openNav()" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-		<div class="collapse navbar-collapse" id="navbarToggler">
+		<!-- <div class="collapse navbar-collapse" id="navbarToggler">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item active">
 					<a class="nav-link" href="{{url_for('index')}}">Home</a>
@@ -46,15 +77,17 @@
 					<a class="nav-link" href="{{url_for('search')}}">Search</a>
 				</li>
 			</ul>
-		</div>
+		</div> -->
 	</nav>
     <!-- /NAVBAR -->
-
+    
 	{% block content %}
 	{% endblock %}
-
+    
+    </div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{{url_for('static', filename='javascript/main.js')}}"></script>
 </body>
 
 </html>
