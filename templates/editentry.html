@@ -14,11 +14,11 @@
 			<form action="{{url_for('update_entry', entry_id=entry._id)}}" method="POST">
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text" class="form-control" id="name" name="name" placeholder="" value="{{entry.name}}">
+					<input type="text" class="form-control" id="name" name="name" value="{{entry.name}}" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" id="description" name="description" rows="3">{{entry.description}}</textarea>
+                    <textarea class="form-control" id="description" name="description" rows="3" required>{{entry.description}}</textarea>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="upvotes" name="upvotes" value="{{entry.upvotes}}" hidden>

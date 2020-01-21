@@ -22,15 +22,15 @@ body {
 /* ---- SIDEBAR ---- */
 /* The sidebar menu */
 .sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 5; /* Stay on top */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 5;
     top: 0;
     right: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-x: hidden;
     padding-top: 1em;
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    transition: 0.5s;
     border-left-color: rgb(206, 212, 218);
     border-left-style: solid;
     border-left-width: 1px;
@@ -73,7 +73,7 @@ body {
 /* ---- SIDEBAR ---- */
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
 }
 /* ---- /SIDEBAR ---- */

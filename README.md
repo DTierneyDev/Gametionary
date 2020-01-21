@@ -2,12 +2,12 @@
 
 This project is an online dictionary for Game related words, abbreviations and phrases.
 
-Using this desktopsite, you will be able to read the entries that have been entered into the database.
+Using this site, you will be able to read the entries that have been entered into the database.
 Add you own entries into the database. Edit entries that are in the database, and delete entries from the database.
 
 You can also upvote entries that you find helpful or accurate.
 
-The goals of this desktopsite are to:
+The goals of this site are to:
 - Allow users to easily share information on game related jargon.
 - Allow users to easily find information on game related jargon.
 - Allow users to upvote information that they find helpful.
@@ -18,7 +18,7 @@ A demo can be viewed on Heroku [here](hhttps://gametionary.herokuapp.com/).
 
 ## UX
 
-My goal with the design of this desktopsite was to make it simple to navigate and use.
+My goal with the design of this site was to make it simple to navigate and use.
 I've done this using an introduction on the main page, and making the layout easy to understand. Such as the buttons (edit, delete, upvote) on entries being highlighted and easy to find.
 
 #### User Stories
@@ -60,7 +60,7 @@ Here are the wireframe mockups that I made before starting the project.
 
 ## Features
 
-Each page features a navigation bar with a brand-logo for quick access to the home page, a search bar, and a button to open the sidebar.
+Each page features a navigation bar with a brand-logo for quick access to the home page, a search bar, and a button to toggle the sidebar.
 
 #### Index
 
@@ -70,7 +70,7 @@ It also features 2 random entries to give users an idea of what to expect, and g
 #### Search
 
 This page features a search bar and will show the database entries that contain your search.
-If you were redirected to this page via the navbar then your search will be pre-entered. Otherwise this page will load empty.
+If you were redirected to this page via the navbar then your search will be pre-entered.
 
 #### A-Z
 
@@ -92,15 +92,12 @@ The add page will load with a blank form. Whereas the edit page will load with t
 Once you'ce completed the form the submit button will add or edit the entry.
 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
-### Features Left to Implement
-- Another feature idea
+- Search Function - This allows users to search the database for a particular definition.
+- Add Entry - This allows users to Create new definitions in the database.
+- A-Z List - This allows users to Read all of the definitions that are currently in the database.
+- Edit Entry - This allows users to Update definitions that are currently in the database.
+- Delete Entry - This allows users to Delete definitions from the database.
 
 ## Technologies Used
 
@@ -114,48 +111,55 @@ In addition, you may also use this section to discuss plans for additional featu
 8. Python
 9. Heroku
 
-
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+1. Navbar - Search Form:
+    1. Went to the "Index" page
+    2. Tried to submit the empty form and confirmed that an error message about the required field appears.
+    3. Tried to submit the form with all inputs and verify it submits the search term to the search page correctly.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+2. Search Page - Search Form:
+    1. Went to the "Search" page
+    2. Tried to submit the empty form and confirmed that an error message about the required field appears.
+    3. Tried to submit the form with all inputs and verify it submits the search term to the search page correctly.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+3. Add Entry Page - Entry Form:
+    1. Went to the "Add Entry" page
+    2. Tried to submit the empty form and confirmed that an error message appears.
+    3. Tried to submit the form with empty name and confirmed that an error message about the required fields appears.
+    4. Tried to submit the form with empty description and confirmed that an error message about the required fields appears.
+    5. Tried to submit the form with all inputs valid and verify it is correctly added to mongo database.
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+4. Edit Entry Page - Entry Form:
+    1. Went to the "Edit Entry" page
+    2. Tried to submit the empty form and confirmed that an error message appears.
+    3. Tried to submit the form with empty name and confirmed that an error message about the required fields appears.
+    4. Tried to submit the form with empty description and confirmed that an error message about the required fields appears.
+    5. Tried to submit the form with all inputs valid, and some data changed, and verify it is correctly edited on mongo database.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+5. Delete Entry Button:
+    1. Went to the "Index" page.
+    2. Clicked the delete button on one of the entries shown.
+    3. Confirmed that the entry had been deleted from the Mongo Database.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This site is hosted using Heroku, it is linked directly to this Github repositories' master branch. The deployment on Heroku is updated automatically everytime a new push is made to the Github repo.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+In order for the deployed site to work correctly on Heroku, there must be a procfile, requirements.txt file and an app file.
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+While working on the project, an env.py file was used to store my MONGO_URI. This was put into the .gitignore file to keep my MONGO_URI/password from being uploaded to github.
+On my Heroku deployment the MONGO_DBNAME and MONGO_URI values are input into the config vars directly. This keeps my database password out of the local files and stops anyone being able to access this.
 
+A demo can be viewed on Heroku [here](https://gametionary.herokuapp.com/).
 
 ## Credits
-
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 - I used the following tutorial to give me a base toggleable sidebar to work with: [Sidebar Tutorial](https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp)
 
-### Media
-- The photos used in this site were obtained from ...
-
 ### Acknowledgements
 
 - I received inspiration for this project from [Urban Dictionary](https://www.urbandictionary.com/)
+
+This is for educational use.
